@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <Expecta/Expecta.h>
 
 @interface Xcode_TestTests : XCTestCase <XCTWaiterDelegate>
 
@@ -33,16 +32,9 @@
 //
 //    [waiter waitForExpectations:@[ex] timeout:1];
     
-    
-    __block NSString *x = nil;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        sleep(0.5);
-        x = nil;
-        NSLog(@"e");
-    });
-    expect(x).will.beNil();
 
-    
+    NSString *s = @"df";
+    XCTAssertNotNil(s);
     
 }
 
