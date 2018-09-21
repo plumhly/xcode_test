@@ -7,8 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PLum.h"
 
 @interface Xcode_TestTests : XCTestCase <XCTWaiterDelegate>
+@property (nonatomic, strong) PLum *pl;
 
 @end
 
@@ -17,6 +19,7 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.pl = [PLum new];
 }
 
 - (void)tearDown {
@@ -24,18 +27,10 @@
     [super tearDown];
 }
 
-- (void)testExample {
-//    XCTestExpectation *ex = [[XCTestExpectation alloc] initWithDescription:@"hello"];
-    
-//
-//    XCTWaiter *waiter = [[XCTWaiter alloc] initWithDelegate:self];
-//
-//    [waiter waitForExpectations:@[ex] timeout:1];
-    
-
-    NSString *s = @"df";
-    XCTAssertNotNil(s);
-    
+- (void)testCountPlusOne {
+    NSInteger i = 1;
+    NSInteger result = [self.pl countPlusOne:i];
+    XCTAssertEqual(result, 2);
 }
 
 - (void)testPerformanceExample {

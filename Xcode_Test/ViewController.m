@@ -19,6 +19,10 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (NSInteger) countPlusOne:(NSInteger)para {
+    return para + 1;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
